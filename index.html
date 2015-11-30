@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+    <title>Regular Expressions</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Regexes are Great">
+		<meta name="author" content="James Gibson">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -35,337 +35,360 @@
 	</head>
 
 	<body>
-
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+					<h1>Regexes</h1>
+					<h3>Processing strings for the win!</h3>
+          <p>
+            <small>
+              <a href="http://secondforge.com">James Gibson</a> </br>
+              <a href="http://twitter.com/jamescgibson">@jamescgibson</a> </br>
+              Sponsored by <a href="https://www.quottly.com">Quottly</a> </br>
+            </small>
 					</p>
 				</section>
 
 				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+<section>
+  <h2>What is a regular expression?</h2>
+  <p>
+    <ul>
+      <li> "a sequence of characters that define a search pattern"</li>
+      <li> "wildcards on steroids"</li>
+      <li> "a way of desribing regular languages in formal language theory" </li>
+    </ul>
+  </p>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+  <p>
+  <i>the best way for you to manipulate strings</i>
+</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+<section data-markdown>
+## Why do you care?
+</section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+<section data-markdown>
+##Do you use strings?
+</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+<section data-markdown>
+  ## A sequence of characters
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+  ```
+  /software/
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+  /[0-9]+/
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+  /(?<=[A-Z]{3})\s(?=\d{4})/
+  ```
+</section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+<section data-markdown>
+## That define a search pattern
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+* Read the string from left to right, and for each character:
+* Read the regex from left to right, checking if the characters match
+* Stop and return false if the patterns don't match
+* If you get to the end of the regex, they match! Stop.
+* If you get to the end of the string, they don't!
+</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+<section data-markdown>
+### Simplest Possible Example
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+Let's check if a string matches a string
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+Could do this this way:
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
+``` javascript
+var string = "Hello Software Engineering Club!";
+string.includes("Software"); //=> true
+string.indexOf("Software") >= 0; //=> true
+```
+</section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+<section data-markdown>
+### Simplest Possible Example
 
-    var nodes = document.querySelectorAll( selector );
+Or do it this way!
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+``` javascript
+var string = "Hello Software Engineering Club!";
+var regex = /software/;
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+regex.test(string) //=> false
+
+var regex = /Software/
+regex.test(string) //=> true
+regex.exec(string) //=> ["Software"]
+```
+</section>
+
+<section data-markdown>
+### Elmer Fudd
+
+Does this string contain "gum drops"?
+
+``` javascript
+var fudd = "They're all out of gum dwops?";
+var you = "They're all out of gum drops?";
+
+fudd.include("dwops") || fudd.include("drops"); //=> true
+you.include("dwops") || you.include("drops"); //=> true
+```
+</section>
+<section data-markdown>
+
+``` javascript
+var fudd = "They're all out of gum dwops?";
+var you = "They're all out of gum drops?";
+
+var regex = /gum d[rw]ops/;
+
+regex.test(fudd); //=> true
+regex.test(you); //=> true
+regex.match(you); //=> ["drops"]
+regex.match(fudd); //=> ["dwops"]
+
+```
+
+regex wins
+
+</section>
+
+<section data-markdown>
+### Banning the catcaller
+
+``` javascript
+var catCaller1 = "Helloooo, Nurse!";
+var catCaller2 = "Hellooooooo, Nurse!";
+var respectful = "Hello there, Nurse Roberts!";
+```
+</section>
+
+<section data-markdown>
+### Without regexes:
+
+``` javascript
+var catCaller1 = "Helloooo, Nurse!";
+var catCaller2 = "Hellooooooo, Nurse!";
+var respectful = "Hello there, Nurse Roberts!";
+
+function shouldBan(string) {
+  return string.include("Helloo") && string.include("Nurse");
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+shouldBan(catCaller1); //=> true #RIGHT!
+shouldBan(catCaller2); //=> true #RIGHT!
+shouldBan(respectful); //=> false #RIGHT!
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+```
+</section>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+<section data-markdown>
+### Without regexes:
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+``` javascript
+var typo = "Helloo there, Nurse Roberts!";
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+function shouldBan(string) {
+  return string.include("Helloo") && string.include("Nurse");
+}
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+shouldBan(typo); /*=> true #WRONG */
+```
+</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+<section data-markdown>
+### Banning the Catcallers with Regexes
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+Match any number of 'o's
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+``` javascript
+var catCaller1 = "Helloooo, Nurse!";
+var catCaller2 = "Hellooooooo, Nurse!";
+var respectful = "Hello there, Nurse Roberts!";
+var typo = "Helloo there, Nurse Roberts!";
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+function shouldBan(string) {
+  var regex = /Helloo+, Nurse/;
+  return regex.test(string);
+}
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+shouldBan(catCaller1); //=> true #RIGHT!
+shouldBan(catCaller2); //=> true #RIGHT!
+shouldBan(respectful); //=> false #RIGHT!
+shouldBan(typo); //=> false #RIGHT!
+```
+</section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+<section data-markdown>
+### You get the idea
+
+```
+\  -> Escape any of the characters below
+
+*  -> Match 0 or more times
++  -> Match 1 or more times
+?  -> Match 0 or 1 times
+
+[] -> Match any character in the brackets
+.  -> Match any character
+$  -> Match the end of the input
+^  -> Match the beginning of the input
+```
+</section>
+
+<section data-markdown>
+###
+
+Bit
+
+``` javascript
+```
+</section>
+
+<section data-markdown>
+### Heading
+
+Bit
+
+``` javascript
+```
+</section>
+
+<section>
+<section data-markdown>
+### Now you have two problems
+
+> Some people, when confronted with a problem, think, "I know, I'll use regular expressions." Now they have two problems
+>
+> -Jamie Zawinksi via Jeff Atwood
+</section>
+
+<section data-markdown>
+### NOT IF YOU TEST!
+
+Confine your regexes to methods that have business meaning.
+
+Write unit tests.
+
+Write small regexes
+
+(Seriously, lots of unit tests.)
+</section>
+
+<section data-markdown>
+### Example from Quottly
+
+``` ruby
+def course_codes
+  strings = remove_excess_spaces(text)
+  strings.scan(/[^FGR]([A-Z]{3}\s*\d{4}\w*)/).map do |code|
+    code.first.gsub(/\s/, "")
+  end
+end
+```
+
+``` ruby
+it "matches a course code" do
+  string = "Yadda Yadda ABC1234"
+  expect(subject.course_codes).to include("ABC1234")
+end
+
+it "Doesn't match a year" do
+  string = "Schedule Fall 2014"
+  expect(subject.course_codes).to_not include("ALL2014")
+end
+
+it "Can batch an actual course code with a year-number" do
+  string = "Course: ING 2013 English Lab"
+  expect(subject.course_codes).to include("ING2013")
+end
+```
+</section>
+</section>
+
+<section> <!-- dont regex html section -->
+<section data-markdown>
+# Gotchas
+</section>
+
+<section data-markdown>
+### Don't Regex HTML
+
+> You can't parse [X]TML with regex. Because HTML can't be parsed by regex. Regex is not a tool that can be used to correctly parse HTML.
+
+[stackoverflow](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+</section>
+
+<section data-markdown>
+### Unicode is not fun
+
+``` javascript
+var regex = /Name:\s(.+?)\s(.+?)/;
+var string = "Name: Tim&nbsp;Tebow";
+
+regex.test(string); //=> false #WHAT?
+```
+</section>
+<section data-markdown>
+
+``` javascript
+var regex = /Name:\s(.+?)\s(.+?)/;
+var string1 = "Name: Tim Tebow";
+var string2= "Name: Tim&nbsp;Tebow";
+
+regex.test(string1); //=> true
+regex.test(string2); //=> false #WHAT?
+
+string1.charCodeAt(9); => 32
+string1.charCodeAt(9); => 160
+```
+</section>
+
+<section data-markdown>
+### Newlines aren't always included
+
+``` javascript
+var regex = /Name:\s(.+?)\s(.+?)/;
+var string = "Name: Tim\nTebow";
+
+regex.test(string); //=> true in javascript;
+// false in Ruby, Python (?)
+
+var regex = /Name:\s(.+?)\s(.+?)/m;
+regex.test(string); //=> true
+```
+</section>
+
+<section data-markdown>
+### Matching all occurances can be odd, be careful
+
+``` javascript
+var regex1 = /Name:\s(.+?)\s(.+?)/;
+var regex2 = /Name:\s(.+?)\s(.+?)/g;
+var string = "Name: Tim Tebow\n Name: Chirs Leak";
+
+string.match(regex1); //=> ["Tim Tebow"]
+string.match(regex2); //=> ["Tim Tebow", "Chris Leak"]
+```
+
+(In many languages you call a different method to return all matches)
+</section>
+</section>
+
+<section data-markdown>
+### Heading
+
+Bit
+
+``` javascript
+```
+</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
