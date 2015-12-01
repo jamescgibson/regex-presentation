@@ -97,7 +97,7 @@
 </section>
 
 <section data-markdown>
-### Simplest Possible Example
+### Simplest Possible Example (JavaScript)
 
 Let's check if a string matches a string
 
@@ -109,6 +109,7 @@ string.includes("Software"); //=> true
 string.indexOf("Software") >= 0; //=> true
 ```
 </section>
+
 
 <section data-markdown>
 ### Simplest Possible Example
@@ -124,6 +125,24 @@ regex.test(string) //=> false
 var regex = /Software/
 regex.test(string) //=> true
 regex.exec(string) //=> ["Software"]
+```
+</section>
+
+<section data-markdown>
+### Simplest Possible Example (Java)
+
+In Java
+
+``` java
+import java.util.regex.*;
+
+// public class something or other ...
+
+String string = "Hello Software Engineering Club!";
+string.matches("software"); //=> false
+string.matches("Software") >= 0; //=> true
+
+// some more boilerplate
 ```
 </section>
 
@@ -243,21 +262,83 @@ $  -> Match the end of the input
 </section>
 
 <section data-markdown>
-###
+### Character Classes
 
-Bit
+Put a \ and make some magic
+
+```
+\d -> Any number
+\D -> Any not-number
+\s -> Any space
+\w -> Any "word character" (letters, numbers, underscores),
+\W -> Any non-word character
+```
 
 ``` javascript
+var string = "There are words here!
+var regex = /\d/
+
+regex.test(string) //=> false
 ```
 </section>
 
 <section data-markdown>
-### Heading
+### Character Class Counts
 
-Bit
+{ } for the win
+
+```
+\d{1,3} -> 1 to 3 numbers
+\d{2,} -> 2 or more numbers
+\d{,5} -> Up to 5 numbers
+\d{3} -> 3 NUmbers
+```
 
 ``` javascript
+var course name= "MAC 2311 Introduction to Calculus 1";
+var regex = /[A-Z]{3}\s\d{4}/;
+
+regex.test(string) //=> true
 ```
+</section>
+
+<section>
+<section data-markdown>
+### Matchgroups!
+
+What if we want to just pull out a little something?
+
+Put what we want to keep in `( )`
+
+``` javascript
+var regex = /Name:\s(.+)\sAge/;
+var string = "Name: Tim Tebow Age: 28";
+
+regex.exec(string); //=> ["Name: Tim Tebow", "Tim Tebow"]
+```
+</section>
+
+<section data-markdown>
+### Matchgroups!
+
+``` javascript
+var regex = /([A-Z]{3} \d{4})/;
+var string = "MAC 2311 Intro to Calc 1 and PHY 2054 Physics";
+
+string.match(regex); //=> ["MAC 2311", "MAC 2311"]
+```
+</section>
+
+<section data-markdown>
+### Go go global flag!
+
+``` javascript
+var regex = /([A-Z]{3} \d{4})/g;
+var string = "MAC 2311 Intro Calc 1 and PHY 2054 Physics";
+
+string.match(regex); //=> ["MAC 2311", "PHY 2054"]
+```
+</section>
 </section>
 
 <section>
@@ -373,8 +454,8 @@ var regex1 = /Name:\s(.+?)\s(.+?)/;
 var regex2 = /Name:\s(.+?)\s(.+?)/g;
 var string = "Name: Tim Tebow\n Name: Chirs Leak";
 
-string.match(regex1); //=> ["Tim Tebow"]
-string.match(regex2); //=> ["Tim Tebow", "Chris Leak"]
+string.exec(regex1); //=> ["Tim Tebow"]
+string.exec(regex2); //=> ["Tim Tebow", "Chris Leak"]
 ```
 
 (In many languages you call a different method to return all matches)
@@ -382,21 +463,12 @@ string.match(regex2); //=> ["Tim Tebow", "Chris Leak"]
 </section>
 
 <section data-markdown>
-### Heading
+# The End
 
-Bit
+Tell your friends about Quottly!
 
-``` javascript
-```
+Ask me questions!
 </section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
 
 			</div>
 
